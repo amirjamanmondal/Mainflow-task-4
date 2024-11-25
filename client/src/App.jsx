@@ -12,7 +12,7 @@ function App() {
   // });
 
   return (
-    <div className="w-screen min-h-screen bg-[url('./assets/background.jpg')] bg-cover text-black flex justify-center items-center">
+    <div className="w-screen min-h-screen bg-[url('./assets/background.jpg')] bg-cover bg-no-repeat text-black flex justify-center items-start">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
