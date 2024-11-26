@@ -3,6 +3,7 @@ const Signup = require("../controllers/Signup");
 const passport = require("passport");
 const isAuthenticated = require("../middleware/AuthUser");
 const GetInfo = require("../controllers/GetInfo");
+const Logout = require("../controllers/Logout");
 
 const router = express.Router();
 
@@ -21,5 +22,6 @@ router.post(
 );
 
 router.get("/", isAuthenticated, GetInfo);
+router.get("/logout", Logout);
 
 module.exports = router;
