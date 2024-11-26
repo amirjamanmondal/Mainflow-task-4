@@ -1,11 +1,10 @@
 import React, { useLayoutEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Navbar from "../card/Navbar";
 import axios from "axios";
 
 const Landing = () => {
   const [user, setUser] = useState();
-  const navigate = useNavigate();
 
   useLayoutEffect(() => {
     const fetchData = async () => {
