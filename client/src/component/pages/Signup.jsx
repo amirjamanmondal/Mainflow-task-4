@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -19,8 +20,9 @@ const Signup = () => {
         { withCredentials: true }
       );
       const data = res.data;
-      console.log(data);
+      toast(data.message);
     } catch (error) {
+      toast(error.message);
       console.error(error);
     }
   };
@@ -28,6 +30,7 @@ const Signup = () => {
   return (
     <div className="w-full h-fit flex justify-center items-center">
       <form className="w-1/3 h-fit flex justify-center items-start gap-4 flex-col text-white bg-red-400 p-8 mt-4">
+        <Toaster />
         <h1 className="text-4xl">Signup</h1>
         <input
           type="text"

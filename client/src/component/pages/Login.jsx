@@ -12,17 +12,18 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
+      await axios.post(
         `http://localhost:5050/user/login`,
         { email, password },
         { withCredentials: true }
       );
-      const data = res.data;
-      console.log(data.user);
+
       toast("login success");
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (error) {
-      console.error(error.message);
+      toast("/login");
     }
   };
 
